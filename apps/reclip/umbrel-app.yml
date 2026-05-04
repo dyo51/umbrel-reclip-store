@@ -1,0 +1,10 @@
+id: reclip
+name: Reclip
+version: "1.0.0"
+tagline: Download de vídeos
+description: Baixe vídeos via interface web
+developer: Dyo Neto
+website: https://github.com/averygan/reclip
+category: media
+icon: icon.png
+dependencies: []
