@@ -1,4 +1,5 @@
 id: reclip
+port: 8899
 name: Reclip
 version: "1.0.0"
 tagline: Download de vídeos
