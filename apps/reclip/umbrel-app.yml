@@ -1,5 +1,4 @@
 id: reclip
-port: 8899
 name: Reclip
 version: "1.0.0"
 tagline: Download de vídeos
@@ -8,4 +7,5 @@ developer: Dyo Neto
 website: https://github.com/averygan/reclip
 category: media
 icon: icon.png
+port: 8899
 dependencies: []
