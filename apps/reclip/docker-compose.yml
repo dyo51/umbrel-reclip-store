@@ -7,6 +7,8 @@ services:
     environment:
       APP_HOST: server
       APP_PORT: 8899
+    depends_on:
+      - server
 
   server:
     image: localhost:5000/reclip:latest
