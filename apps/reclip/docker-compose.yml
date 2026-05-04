@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    image: getumbrel/app-proxy:1.7.0
+    restart: unless-stopped
+    environment:
+      APP_HOST: server
+      APP_PORT: 8899
+
+  server:
+    image: localhost:5000/reclip:latest
+    restart: unless-stopped
