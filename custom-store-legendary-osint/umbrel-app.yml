@@ -1,0 +1,17 @@
+manifestVersion: 1
+id: custom-store-legendary-osint
+name: Legendary OSINT
+tagline: Leitor de catálogo OSINT
+icon: https://raw.githubusercontent.com/dyo51/umbrel-reclip-store/master/custom-store-legendary-osint/icon.png
+category: security
+version: "1.0.0"
+port: 80
+description: "Leitor web somente de leitura para o diretório OSINT de K2SOsint. Busca o conteúdo diretamente do GitHub, filtra nesta aba e abre referências externas; não executa pesquisas nem varreduras. Use para fins legítimos e mantenha o login do Umbrel ativado."
+developer: Custom Store
+website: https://github.com/K2SOsint/Legendary_OSINT
+repo: https://github.com/K2SOsint/Legendary_OSINT
+support: https://github.com/dyo51/umbrel-reclip-store/issues
+gallery: []
+releaseNotes: "Interface responsiva, leitura ao vivo do repositório original e busca somente local."
+dependencies: []
+path: ""

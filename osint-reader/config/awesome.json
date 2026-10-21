@@ -1,0 +1,14 @@
+{
+  "title": "Awesome OSINT",
+  "subtitle": "Um catálogo comunitário de ferramentas, fontes e guias para pesquisa em fontes abertas.",
+  "kicker": "DIRETÓRIO COMUNITÁRIO · REFERÊNCIAS",
+  "repo": "brandonhimpfen/awesome-osint",
+  "branch": "main",
+  "indexFile": "README.md",
+  "mode": "awesome",
+  "theme": "awesome",
+  "icon": "/icon.png",
+  "homepage": "https://lnktr.net/awesome",
+  "searchPlaceholder": "Buscar ferramentas ou temas…",
+  "licenseNote": "Não foi encontrada licença explícita no repositório. O README é carregado diretamente do GitHub no momento de uso e não é redistribuído nesta imagem. Consulte os termos e a licença de cada recurso externo."
+}

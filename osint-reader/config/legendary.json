@@ -1,0 +1,14 @@
+{
+  "title": "Legendary OSINT",
+  "subtitle": "Um diretório editorial de recursos OSINT, agrupados por tema e lidos ao vivo do repositório original.",
+  "kicker": "CADERNO DE CAMPO · REFERÊNCIAS",
+  "repo": "K2SOsint/Legendary_OSINT",
+  "branch": "main",
+  "indexFile": "README.md",
+  "mode": "legendary",
+  "theme": "legendary",
+  "icon": "/icon.png",
+  "homepage": null,
+  "searchPlaceholder": "Buscar categoria ou recurso…",
+  "licenseNote": "O upstream declara CC0 1.0. Os recursos listados são de terceiros; verifique cada serviço antes de usar. O conteúdo é obtido diretamente do GitHub e não é incluído nesta imagem."
+}

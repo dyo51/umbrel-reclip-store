@@ -1,0 +1,9 @@
+{
+  "name": "custom-store-osint-reader",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check web/app.js && node --check web/markdown.js"
+  }
+}

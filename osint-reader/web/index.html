@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#091321">
+    <title>Catálogo OSINT</title>
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+    <div class="app-frame">
+      <header class="app-header">
+        <div class="brand-lockup">
+          <img id="brand-icon" class="brand-icon" src="/icon.png" width="54" height="54" alt="" fetchpriority="high">
+          <div class="brand-copy">
+            <p id="brand-kicker" class="eyebrow">BIBLIOTECA DE REFERÊNCIA</p>
+            <h1 id="app-title">Catálogo OSINT</h1>
+            <p id="app-subtitle" class="subtitle">Recursos públicos, organizados para leitura.</p>
+          </div>
+        </div>
+        <div class="header-actions" aria-label="Ações do catálogo">
+          <a id="homepage-link" class="button button-quiet" href="#" target="_blank" rel="noopener noreferrer" hidden>Site original ↗</a>
+          <a id="source-link" class="button button-quiet" href="#" target="_blank" rel="noopener noreferrer">Repositório ↗</a>
+          <button id="refresh-button" class="button button-primary" type="button">Atualizar fonte</button>
+        </div>
+      </header>
+
+      <aside class="safety-note" aria-label="Uso responsável">
+        <span class="safety-mark" aria-hidden="true">i</span>
+        <p><strong>Catálogo de referências — não executa buscas.</strong> Os links levam a serviços de terceiros. Use apenas fontes públicas, com autorização quando necessária, e respeite privacidade, legislação e termos de uso.</p>
+      </aside>
+
+      <div class="content-layout">
+        <aside class="sidebar" aria-label="Navegação do catálogo">
+          <form id="search-form" class="search-form" role="search">
+            <label for="search-input">Buscar recursos</label>
+            <div class="search-box">
+              <span class="search-glyph" aria-hidden="true">⌕</span>
+              <input id="search-input" type="search" name="q" placeholder="Nome, tema ou descrição…" autocomplete="off" spellcheck="false">
+              <kbd aria-hidden="true">/</kbd>
+            </div>
+            <p class="privacy-hint">Filtro local no navegador; sua busca não é enviada.</p>
+          </form>
+          <div class="nav-heading">
+            <h2>Índice</h2>
+            <span id="category-total" class="count-chip">—</span>
+          </div>
+          <nav id="category-list" class="category-list" aria-label="Categorias"></nav>
+          <div class="sidebar-meta">
+            <span id="live-indicator" class="live-indicator" aria-hidden="true"></span>
+            <div>
+              <p id="source-state" class="source-state" role="status" aria-live="polite">Conectando à fonte…</p>
+              <a id="history-link" class="history-link" href="#" target="_blank" rel="noopener noreferrer">Histórico no GitHub ↗</a>
+            </div>
+          </div>
+        </aside>
+
+        <main id="main-content" class="main-content" tabindex="-1">
+          <section class="intro-row" aria-labelledby="content-heading">
+            <div>
+              <p id="content-kicker" class="eyebrow">FONTE DIRETA · GITHUB</p>
+              <h2 id="content-heading" aria-live="polite" aria-atomic="true">Carregando catálogo…</h2>
+              <p id="content-summary" class="content-summary">O conteúdo é lido do repositório original e mantido apenas na memória desta aba.</p>
+            </div>
+            <p id="resource-count" class="resource-count" aria-live="polite"></p>
+          </section>
+
+          <section id="loading-state" class="message-panel" role="status" aria-live="polite">
+            <span class="spinner" aria-hidden="true"></span>
+            <p>Carregando referências da fonte…</p>
+          </section>
+          <section id="error-state" class="message-panel message-error" role="alert" hidden>
+            <h3>Não foi possível carregar a fonte</h3>
+            <p id="error-message">Verifique a conexão com GitHub e tente novamente.</p>
+            <button id="retry-button" class="button button-primary" type="button">Tentar novamente</button>
+          </section>
+          <section id="empty-state" class="message-panel" hidden>
+            <h3>Nenhum recurso encontrado</h3>
+            <p>Tente outro termo ou limpe o filtro.</p>
+          </section>
+          <div id="results" class="results" aria-label="Recursos encontrados"></div>
+
+          <footer class="app-footer">
+            <p id="license-note"></p>
+            <p>Sem contas, telemetria ou armazenamento de pesquisas. O catálogo não coleta dados nem executa ferramentas OSINT; abre somente os links escolhidos por você.</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
