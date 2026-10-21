@@ -11,5 +11,5 @@ services:
       - server
 
   server:
-    image: localhost:5000/reclip:latest
+    image: ghcr.io/dyo51/custom-store-reclip:upstream-1d161d15a4fe93d9b3371377f0a421dc3e965b10
     restart: unless-stopped

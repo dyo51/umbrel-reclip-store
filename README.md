@@ -5,6 +5,7 @@ This repository is a multi-app Community App Store for umbrelOS, based on the of
 - Store ID: `custom-store`
 - Display name: `Custom` (shown by Umbrel as **Custom App Store**)
 - Current package: Reclip (`custom-store-reclip/`)
+- Container image: `ghcr.io/dyo51/custom-store-reclip:upstream-1d161d15a4fe93d9b3371377f0a421dc3e965b10`, built from a pinned upstream commit by GitHub Actions.
 
 ## Package convention
 

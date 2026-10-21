@@ -4,7 +4,7 @@ name: Reclip
 tagline: Download de vídeos
 icon: https://raw.githubusercontent.com/dyo51/umbrel-reclip-store/master/custom-store-reclip/icon.png
 category: media
-version: "1.0.0"
+version: "1.0.1"
 port: 8899
 description: Baixe vídeos via interface web
 developer: Dyo Neto
