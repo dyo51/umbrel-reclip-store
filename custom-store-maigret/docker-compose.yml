@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    image: getumbrel/app-proxy:1.7.0
+    restart: unless-stopped
+    environment:
+      APP_HOST: custom-store-maigret_server_1
+      APP_PORT: 5000
+    depends_on:
+      - server
+
+  server:
+    image: soxoj/maigret:web@sha256:cf27dcf59eb1c86209600d5ee470048fc56881631a42239fed53ef2b8a04de54
+    restart: unless-stopped

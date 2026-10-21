@@ -1,0 +1,17 @@
+manifestVersion: 1
+id: custom-store-maigret
+name: Maigret
+tagline: Busca de perfis por usuário
+icon: https://raw.githubusercontent.com/dyo51/umbrel-reclip-store/master/custom-store-maigret/icon.png
+category: security
+version: "0.6.6"
+port: 5000
+description: "Ferramenta OSINT para verificar nomes de usuário em milhares de sites públicos e gerar relatórios pela interface web. Use somente em pesquisas legítimas e autorizadas; respeite leis, privacidade e termos de serviço. A interface não possui login próprio; mantenha a proteção de login do Umbrel ativada."
+developer: Soxoj
+website: https://github.com/soxoj/maigret
+repo: https://github.com/soxoj/maigret
+support: https://github.com/soxoj/maigret/issues
+gallery: []
+releaseNotes: "Imagem web oficial soxoj/maigret, fixada no commit upstream eaf820666d15bfd545129f3223e2261c27191e74."
+dependencies: []
+path: ""
