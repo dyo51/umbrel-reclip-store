@@ -5,7 +5,7 @@ services:
     image: getumbrel/app-proxy:1.7.0
     restart: unless-stopped
     environment:
-      APP_HOST: reclip-store-reclip_server_1
+      APP_HOST: custom-store-reclip_server_1
       APP_PORT: 8899
     depends_on:
       - server
