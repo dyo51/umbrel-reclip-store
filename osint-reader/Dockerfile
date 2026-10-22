@@ -1,7 +1,10 @@
 FROM nginx:alpine@sha256:892bb2152464f0c5d8972593a5f5afaf8054552580b699d95f8ff4af08c2d33d
 
-RUN rm -f /etc/nginx/conf.d/default.conf
+RUN apk add --no-cache ca-certificates \
+    && rm -f /etc/nginx/conf.d/default.conf \
+    && mkdir -p /etc/nginx/snippets
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY nginx/sites/ /opt/osint-reader/nginx-sites/
 COPY web/ /usr/share/nginx/html/
 COPY config/ /opt/osint-reader/configs/
 COPY assets/ /opt/osint-reader/assets/

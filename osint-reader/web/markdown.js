@@ -18,6 +18,24 @@ export function shouldRetryStatus(status) {
   return [429, 500, 502, 503, 504].includes(Number(status));
 }
 
+export function sourceRequestPath(path) {
+  const value = String(path);
+  const segments = value.split('/');
+  const safeSegment = /^[A-Za-z0-9_][A-Za-z0-9._-]*$/;
+  const isApprovedRoot = value === 'README.md';
+  const isApprovedDocument = segments[0] === 'docs' && segments.length > 1;
+
+  if (
+    (!isApprovedRoot && !isApprovedDocument)
+    || segments.some((segment) => !safeSegment.test(segment) || segment === '.' || segment === '..')
+    || !segments.at(-1).endsWith('.md')
+  ) {
+    throw new Error('Caminho inválido para a fonte.');
+  }
+
+  return `/source/${segments.map((segment) => encodeURIComponent(segment)).join('/')}`;
+}
+
 export function filterSections(sections, query) {
   const term = String(query).trim().toLocaleLowerCase();
   if (!term) return sections;

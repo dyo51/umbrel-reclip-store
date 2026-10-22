@@ -1,4 +1,4 @@
-import { filterSections, parseLegendaryIndex, parseSections, safeExternalUrl, shouldRetryStatus } from './markdown.js';
+import { filterSections, parseLegendaryIndex, parseSections, safeExternalUrl, shouldRetryStatus, sourceRequestPath } from './markdown.js';
 
 const byId = (id) => document.getElementById(id);
 const state = {
@@ -83,12 +83,7 @@ function applyConfig() {
 }
 
 async function fetchRemoteMarkdown(path) {
-  const [owner, repository] = state.config.repo.split('/');
-  if (!owner || !repository || path.split('/').some((part) => part === '..')) {
-    throw new Error('Caminho inválido para a fonte.');
-  }
-  const safePath = path.split('/').map((part) => encodeURIComponent(part)).join('/');
-  const url = `https://raw.githubusercontent.com/${encodeURIComponent(owner)}/${encodeURIComponent(repository)}/${encodeURIComponent(state.config.branch)}/${safePath}`;
+  const url = sourceRequestPath(path);
   for (let attempt = 0; attempt < 2; attempt += 1) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15000);
@@ -111,14 +106,14 @@ async function fetchRemoteMarkdown(path) {
         await new Promise((resolve) => setTimeout(resolve, waitMs));
         continue;
       }
-      throw new Error(`GitHub respondeu HTTP ${response.status}.`);
+      throw new Error(`A fonte respondeu HTTP ${response.status}.`);
     } catch (error) {
       if (error.name === 'AbortError') throw new Error('A fonte demorou demais para responder.');
       if (error instanceof TypeError && attempt === 0) {
         await new Promise((resolve) => setTimeout(resolve, 400));
         continue;
       }
-      if (error instanceof TypeError) throw new Error('Não foi possível acessar GitHub Raw. Confira a conexão e tente novamente.');
+      if (error instanceof TypeError) throw new Error('Não foi possível carregar o conteúdo pelo servidor do catálogo.');
       throw error;
     } finally {
       clearTimeout(timeout);

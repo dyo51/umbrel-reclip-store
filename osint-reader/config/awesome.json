@@ -10,5 +10,5 @@
   "icon": "/icon.png",
   "homepage": "https://lnktr.net/awesome",
   "searchPlaceholder": "Buscar ferramentas ou temas…",
-  "licenseNote": "Não foi encontrada licença explícita no repositório. O README é carregado diretamente do GitHub no momento de uso e não é redistribuído nesta imagem. Consulte os termos e a licença de cada recurso externo."
+  "licenseNote": "Não foi encontrada licença explícita no repositório. O README é buscado do GitHub pelo serviço do leitor no momento de uso, sem armazenamento persistente ou cópia na imagem. Consulte os termos e a licença de cada recurso externo."
 }

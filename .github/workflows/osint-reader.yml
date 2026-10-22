@@ -76,6 +76,13 @@ jobs:
             test "$ready" = true
             test "$(curl -fsS "${base}/healthz")" = "ok"
             curl -fsS "${base}/config.json" | grep -Fq "\"title\": \"${expected}\""
+            curl -fsS "${base}/source/README.md" | grep -Fq "${expected}"
+            if [ "$site" = "awesome" ]; then
+              test "$(curl -s -o /dev/null -w '%{http_code}' "${base}/source/docs/academic.md")" = "404"
+            else
+              curl -fsS "${base}/source/docs/academic.md" | grep -Fq "General Academic Search"
+              test "$(curl -s -o /dev/null -w '%{http_code}' "${base}/source/CONTRIBUTING.md")" = "404"
+            fi
             curl -fsS "${base}/icon.png" >/dev/null
             test "$(curl -s -o /dev/null -w '%{http_code}' "${base}/configs/awesome.json")" = "404"
             test "$(curl -s -o /dev/null -w '%{http_code}' "${base}/assets/legendary-osint.png")" = "404"
