@@ -4,7 +4,7 @@ name: Awesome OSINT
 tagline: Diretório comunitário OSINT
 icon: https://raw.githubusercontent.com/dyo51/umbrel-reclip-store/master/custom-store-awesome-osint/icon.png
 category: security
-version: "1.0.2"
+version: "1.0.3"
 port: 8010
 description: "Leitor web somente de leitura para o diretório comunitário Awesome OSINT. Obtém o README do GitHub pelo proxy interno do app, filtra nesta aba e abre referências externas; não executa pesquisas nem varreduras. A licença do catálogo não foi identificada; o conteúdo é obtido em tempo real e não é empacotado. Use para fins legítimos e mantenha o login do Umbrel ativado."
 developer: Custom Store
@@ -12,6 +12,6 @@ website: https://github.com/brandonhimpfen/awesome-osint
 repo: https://github.com/brandonhimpfen/awesome-osint
 support: https://github.com/dyo51/umbrel-reclip-store/issues
 gallery: []
-releaseNotes: "Corrigido o carregamento das fontes pela rota de mesma origem do app."
+releaseNotes: "Corrigido o uso da sessão de login do Umbrel ao carregar configuração e fontes."
 dependencies: []
 path: ""

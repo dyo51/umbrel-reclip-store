@@ -11,7 +11,7 @@ services:
       - server
 
   server:
-    image: ghcr.io/dyo51/custom-store-osint-reader:1.0.0@sha256:dc7c523bdbe5cbd7b5fde7b1f70cd3cf88ed31375b1b2ed14cf92be795f09780
+    image: ghcr.io/dyo51/custom-store-osint-reader:1.0.0@sha256:5b8ce6b5946951bd7d97c553360c2c9bd8ec78269b42228365cbfa7ce393317d
     restart: unless-stopped
     environment:
       SITE: legendary
