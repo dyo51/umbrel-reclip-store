@@ -15,6 +15,15 @@ test('frontend source fetches stay on the app origin', () => {
   assert.doesNotMatch(appSource, /https:\/\/raw\.githubusercontent\.com\//);
 });
 
+test('same-origin fetches retain Umbrel authentication for config and source routes', () => {
+  const sourceFetch = appSource.match(/async function fetchRemoteMarkdown\(path\) \{([\s\S]*?)\n\}/)?.[1];
+  const configFetch = appSource.match(/async function loadConfig\(\) \{([\s\S]*?)\n\}/)?.[1];
+  assert.ok(sourceFetch, 'source fetch implementation should be present');
+  assert.ok(configFetch, 'config fetch implementation should be present');
+  assert.match(sourceFetch, /credentials:\s*'same-origin'/);
+  assert.match(configFetch, /credentials:\s*'same-origin'/);
+});
+
 test('rejects paths that could escape the fixed source route', () => {
   for (const path of ['../README.md', 'docs/../README.md', '/README.md', 'https://example.com/README.md', 'README.md?query=x', 'docs//academic.md']) {
     assert.throws(() => sourceRequestPath(path), /Caminho inválido/);

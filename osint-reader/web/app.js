@@ -91,7 +91,7 @@ async function fetchRemoteMarkdown(path) {
       const response = await fetch(url, {
         method: 'GET',
         cache: 'no-store',
-        credentials: 'omit',
+        credentials: 'same-origin',
         redirect: 'error',
         referrerPolicy: 'no-referrer',
         signal: controller.signal,
@@ -322,7 +322,7 @@ async function applySearch() {
 }
 
 async function loadConfig() {
-  const response = await fetch('/config.json', { cache: 'no-store', credentials: 'omit' });
+  const response = await fetch('/config.json', { cache: 'no-store', credentials: 'same-origin' });
   if (!response.ok) throw new Error(`Configuração local indisponível (HTTP ${response.status}).`);
   return response.json();
 }
