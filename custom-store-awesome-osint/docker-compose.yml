@@ -11,7 +11,7 @@ services:
       - server
 
   server:
-    image: ghcr.io/dyo51/custom-store-osint-reader:1.0.0@sha256:dad249584d7dfefa4c526b34fa5e3a82bb63c8092dfb3d907876f586e15c360e
+    image: ghcr.io/dyo51/custom-store-osint-reader:1.0.0@sha256:d42cdd4316c0abf8ca45540c46cc93d9e0bca14d2a788076062976369ea9cb2f
     restart: unless-stopped
     environment:
       SITE: awesome
